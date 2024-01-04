@@ -1,0 +1,48 @@
+{
+  "name": "diamond",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "WATCH=true tsx watch main.ts",
+    "lint": "eslint . --ext ts,tsx --cache",
+    "format": "prettier --write .",
+    "release": "release-it",
+    "husky": "husky install",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.10.5"
+  },
+  "dependencies": {
+    "@paralleldrive/cuid2": "^2.2.2",
+    "air-datepicker": "^3.4.0",
+    "carbon": "github:carbonyde/carbon",
+    "hydrogen": "github:carbonyde/hydrogen#1.1.0",
+    "class-variance-authority": "^0.7.0",
+    "dayjs": "^1.11.10",
+    "lucide-static": "^0.302.0",
+    "tailwind-merge": "^2.2.0"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "skipChecks": true,
+      "publish": false
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "conventionalcommits",
+        "infile": "changelog.md"
+      }
+    }
+  }
+}
